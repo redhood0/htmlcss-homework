@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+				background: rgb(247, 247, 247);
+			}
+
+			.background_null {
+				background: none;
+			}
+
+			.div_outer {
+				background: #666666;
+				width: 1000px;
+				margin: 0 auto
+			}
+
+			#div_top {
+				width: 1000px;
+				height: 100px;
+				background: #ffffff;
+				/* position: relative; */
+				/* 				border: white solid 1px;
+				box-sizing: border-box; */
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				/* display: table-cell; */
+				/* line-height: 100px; */
+				/* display: flex;
+				align-items: center */
+			}
+
+			#div_tabs {
+				width: 1000px;
+				height: 60px;
+				background: rgb(48, 48, 48);
+			}
+
+			#div_lunbo {
+				width: 1000px;
+				height: 460px;
+				background: rgb(48, 148, 48);
+			}
+
+			#div_msg {
+				width: 1000px;
+				height: 240px;
+				background: rgb(148, 48, 48);
+			}
+
+			#div_market {
+				width: 1000px;
+				height: 300px;
+				background: #fff;
+			}
+
+			#div_urls {
+				width: 1000px;
+				height: 250px;
+				background: rgb(229, 229, 229);
+				display: flex;
+			}
+
+			#div_bottom {
+				width: 1000px;
+				height: 80px;
+				background: rgb(248, 148, 148);
+			}
+
+			/* 			img#img_logo {
+				width: 250px;
+				height: 30px;
+				position: absolute;
+				top: 50%;
+				margin-top: -15px;
+				margin-left: 20px;
+			} */
+			img#img_logo {
+				width: 250px;
+				height: 30px;
+				margin-left: 20px;
+			}
+
+			#top_form {
+				width: 230px;
+				height: 30px;
+				margin-right: 20px;
+				position: relative;
+			}
+
+			/* 			#top_form{
+				
+			} */
+
+			#div_top input {
+				width: 230px;
+				height: 30px;
+				background: rgb(241, 241, 241);
+				padding: 8px;
+				padding-left: 15px;
+				font-size: 14px;
+				box-sizing: border-box;
+				border: rgb(221, 221, 221) 1px solid;
+				box-shadow: none;
+			}
+
+
+			#serach_logo {
+				width: 20px;
+				height: 20px;
+				background: none;
+				/* url(img/search_icon.png)  no-repeat; */
+				background-repeat: no-repeat;
+				background-image: url(img/search_icon.png);
+				background-size: 20px 20px;
+				/* background-color: rgb(241,241,241); */
+				color: #999;
+				border: none;
+				position: absolute;
+				top: 50%;
+				right: 0%;
+				margin-top: -10px;
+				margin-right: 5px;
+
+			}
+
+			button#serach_logo:hover {
+				background-image: url(img/serach_hover_icon.png);
+			}
+
+			#tabs_ul {
+				list-style: none;
+				display: flex;
+				width: 950px;
+				height: 60px;
+				align-items: center;
+				font-size: 16px;
+				color: #FFFFFF;
+				justify-content: space-between;
+				background: rgb(48, 48, 48);
+				text-align: center;
+				line-height: 60px;
+				margin-left: 25px;
+				margin-right: 25px;
+			}
+
+			#tabs_ul li {
+				background: none;
+				width: 15%;
+				box-sizing: border-box;
+				border-right: #737373 1px solid;
+			}
+
+			#tabs_ul li:nth-last-child(1) {
+				border-right: none;
+			}
+
+			#left-msg {
+				background: #ffffff;
+				width: 50%;
+				height: 100%;
+				float: left;
+			}
+
+			#center-msg {
+				background: rgb(241, 241, 241);
+				width: 24%;
+				height: 100%;
+				float: left;
+			}
+
+			#right-msg {
+				background: rgb(251, 251, 251);
+				width: 26%;
+				height: 100%;
+				float: right;
+			}
+
+			#left-msg-title {
+				font-size: 20px;
+				font-family: "microsoft yahei";
+				margin-top: 30px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			#center-msg-title {
+				font-size: 18px;
+				font-family: "microsoft yahei";
+				margin-top: 30px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			#left-msg-ul {
+				font-size: 14px;
+				list-style: none;
+			}
+
+			#left-msg-ul li {
+				height: 24px;
+				background: none;
+				line-height: 24px;
+				margin-left: 20px;
+				margin-right: 20px;
+			}
+
+			#left-msg-ul li a {
+				text-decoration: none;
+				float: left;
+				color: rgb(86, 86, 86);
+			}
+
+			#left-msg-ul li p {
+				color: #999999;
+				float: right;
+			}
+
+			.left-msg_li_point {
+				color: rgb(139, 139, 139);
+				font-size: 22px;
+				float: left;
+				margin-right: 10px;
+			}
+
+			#center-msg a {
+				margin-top: 40px;
+				width: 140px;
+				text-decoration: none;
+				color: #333333;
+				font-size: 14px;
+				margin-left: 20px;
+				display: block;
+			}
+
+			#center-msg a span {
+				font-size: 12px;
+			}
+
+			#center-msg p:nth-child(3) {
+				width: 200px;
+				text-decoration: none;
+				color: #999999;
+				font-size: 12px;
+				margin-left: 20px;
+				display: block;
+				text-overflow: ellipsis;
+			}
+
+			#right-msg p:nth-child(1) {
+				font-size: 18px;
+				font-family: "microsoft yahei";
+				margin-top: 30px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			#right-msg p:nth-child(2) {
+				font-size: 12px;
+				font-family: "microsoft yahei";
+				margin-left: 20px;
+				max-width: 180px;
+			}
+
+			#right-msg img:nth-of-type(1) {
+				margin-left: 20px;
+				margin-top: 50px;
+			}
+
+			#right-msg img:nth-of-type(2) {
+				/* margin-left: 20px;
+				margin-top: 50px;
+				display:  inline-block; */
+				float: right;
+				margin-right: 20px;
+			}
+
+			#div_market p:nth-child(1) {
+				font-size: 18px;
+				font-family: "microsoft yahei";
+				padding-top: 30px;
+				margin-left: 20px;
+				margin-bottom: 20px;
+			}
+
+			#div_markets {
+				display: flex;
+				background: #FFFFFF;
+			}
+
+			#div_markets div {
+				width: 25%;
+				/* 				padding-left: 20px;
+				padding-right: 20px; */
+				/* background: #666666; */
+			}
+
+			#div_markets div img {
+				display: block;
+				margin: 0 auto;
+				width: 210px;
+				height: 140px;
+			}
+
+			.font-12 {
+				font-size: 12px;
+			}
+
+			#div_markets div p {
+				line-height: 24px;
+				width: 210px;
+				/* margin-left: 20px; */
+				margin: 0 auto;
+				margin-top: 10px;
+				/* 				font-size: 12px;
+ */
+			}
+
+			#div_urls #div_urls_left {
+				width: 500px;
+				height: 250px;
+			}
+
+			#div_urls_left p {
+				font-size: 16px;
+				color: rgb(90, 90, 90);
+				margin-left: 30px;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				display: block;
+			}
+
+			#div_urls_left .line {
+				height: 1px;
+				width: 460px;
+				background: rgb(194, 194, 194);
+				margin: 0 auto;
+				display: block;
+			}
+
+
+			#div_urls_left .left-url-ul1 {
+				/* background: #333333; */
+				width: 30%;
+				/* margin-left: 20px; */
+				margin-top: 20px;
+				float: left;
+
+			}
+
+			#div_urls_left .left-url-ul1 li {
+				list-style: none;
+				line-height: 20px;
+				background: none;
+			}
+
+			#div_urls_left .left-url-ul1 li span {
+				font-size: 8px;
+				color: rgb(180, 180, 180);
+				background: none;
+			}
+
+			#div_urls_left .left-url-ul1 li a {
+				font-size: 12px;
+				color: rgb(91, 91, 91);
+				text-decoration: none;
+				background: none;
+			}
+
+			#div_urls_left hr {
+				color: #000;
+				width: 460px;
+				height: 1px;
+				border: none;
+				background-color: #999;
+				margin: 0 auto;
+			}
+
+			#left-url-ul1 {
+				margin-left: 20px;
+			}
+
+			#chanpinzhongxin3_ul {
+				margin-left: 30px;
+			}
+
+			#div_urls_center {
+				width: 200px;
+				background: rgb(229,229,229);
+			}
+			#div_urls_center p{
+				font-size: 16px;
+				color: rgb(90, 90, 90);
+				margin-left: 30px;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				display: block;
+				background: none;
+			}
+			
+			#div_urls_center hr{
+				color: #000;
+				width: 80%;
+				height: 1px;
+				border: none;
+				background-color: #999;
+				margin: 0 auto;
+				
+			}
+			#div_urls_center ul{
+				margin-top: 20px;
+			}
+			
+			#div_urls_center .left-url-ul1 li {
+				list-style: none;
+				line-height: 20px;
+				background: none;
+				/* background: url(img/item_icon.png) no-repeat 2px 2px; */
+			}
+			
+			#div_urls_center .left-url-ul1 li span {
+				font-size: 8px;
+				color: rgb(180, 180, 180);
+				background: none;
+			}
+			
+			#div_urls_center .left-url-ul1 li a {
+				font-size: 12px;
+				color: rgb(91, 91, 91);
+				text-decoration: none;
+				background: none;
+			}
+			
+			#div_urls_right{
+				width: 300px;
+				/* background: #FF0000; */
+				background: none;
+				text-align: center;
+			}
+			#div_urls_right p{
+				font-size: 16px;
+				color: rgb(90, 90, 90);
+				margin-left: 30px;
+				padding-top: 30px;
+				padding-bottom: 10px;
+				display: block;
+				background: none;
+			}
+			
+			#div_urls_right hr{
+				color: none;
+				width: 80%;
+				height: 1px;
+				border: none;
+				background-color: #999;
+				margin: 0 auto;
+				display: block;
+			}
+			
+			#div_urls_right img{
+				width: 200px;
+				height: 150px;
+				/* margin: 0 auto; */
+				margin-top: 10px;
+			}
+			#div_bottom img{
+				width: 1000px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="div_outer">
+			<!-- 顶栏 -->
+			<div id="div_top">
+				<img id="img_logo" src="img/logo.png" />
+				<form id="top_form">
+					<input type="text" placeholder="SEARCH."></input>
+					<button id="serach_logo" type="submit" />
+			</div>
+			<!-- tab栏 -->
+			<div id="div_tabs">
+				<ul id="tabs_ul">
+					<li id="li1">集团介绍</li>
+					<li id="li2">产品中心</li>
+					<li id="li3">卧龙市场</li>
+					<li id="li4">技术研发</li>
+					<li id="li5">国际合作</li>
+					<li id="li6">投资者关系</li>
+					<li id="li7">新闻资讯</li>
+					<li id="li8">人力资源</li>
+				</ul>
+			</div>
+			<!-- 轮播栏 -->
+			<div id="div_lunbo">
+				<img src="img/banner.png" />
+			</div>
+			<!-- 信息栏 -->
+			<div id="div_msg">
+				<div id="left-msg">
+					<p class="background_null" id="left-msg-title">新闻资讯</p>
+					<ul class="background_null" id="left-msg-ul">
+						<li id="li1" class="background_null">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">赵乾董事长出席ATB集团召开年度销售大会</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+						<li id="li2">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">中国电器工业协会分玛丽点击分会在卧龙召开</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+						<li id="li3">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">赵乾董事长访问中国驻德大使馆</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+						<li id="li4">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">企业文化屎企业发展的关键要素</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+						<li id="li5">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">BILIBILI干杯！！</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+						<li id="li6">
+							<span class="left-msg_li_point background_null">·</span>
+							<a class="background_null" href="#">喜迎六一唱响卧龙青岛啤酒节欢迎你</a>
+							<p class="background_null">2013-07-30</p>
+						</li>
+					</ul>
+				</div>
+				<div id="center-msg">
+					<p class="background_null" id="center-msg-title">卧龙介绍</p>
+					<a class="background_null" href="#">公司成立于1984年，<span>经过近30年的发展</span></a>
+					<p class="background_null" id="left-msg-title">已成为电器制造，房地产开发和金融投资三业并举的综合性跨国...</p>
+				</div>
+				<div id="right-msg">
+					<p class="background_null" id="right-msg-title">人才招聘</p>
+					<p class="background_null" id="right-msg-detail">培养一流的人才，铸造一流的工程实现员工与企业的共同发展</p>
+					<img src="img/more.png"></img>
+					<img src="img/flower.png"></img>
+				</div>
+			</div>
+			<div id="div_market">
+				<p class="background_null">卧龙市场</p>
+				<div id="div_markets" class="background_null">
+					<div class="background_null">
+						<img src="img/market1.png" />
+						<p class="background_null font-12">交通轨道：由于主要采用电器牵引，而且轮轨摩擦阻力较小，与公共...</p>
+					</div>
+					<div class="background_null">
+						<img src="img/market2.png" />
+						<p class="background_null font-12">交通轨道：由于主要采用电器牵引，而且轮轨摩擦阻力较小，与公共...</p>
+					</div>
+					<div class="background_null">
+						<img src="img/market3.png" />
+						<p class="background_null font-12">交通轨道：由于主要采用电器牵引，而且轮轨摩擦阻力较小，与公共...</p>
+					</div>
+					<div class="background_null">
+						<img src="img/news4.png" />
+						<p class="background_null font-12">交通轨道：由于主要采用电器牵引，而且轮轨摩擦阻力较小，与公共...</p>
+					</div>
+				</div>
+			</div>
+			<div id="div_urls">
+				<div id="div_urls_left" class="background_null">
+					<p class="background_null">产品中心</p>
+					<!-- <div id="left-line" class="line" /> -->
+					<hr />
+					<div class="left-url-ul1 background_null" id="left-url-ul1">
+						<ul class="background_null">
+							<li id="url-left-li1" class="background_null"><span>></span><a href="#">汽车电机</a></li>
+							<li id="url-left-li2"><span>></span><a href="#">日用电机</a></li>
+							<li id="url-left-li3"><span>></span><a href="#">特种电机</a></li>
+							<li id="url-left-li4"><span>></span><a href="#">大功率电机</a></li>
+							<li id="url-left-li5"><span>></span><a href="#">电工设备</a></li>
+						</ul>
+					</div>
+					<div class="left-url-ul1 background_null">
+						<ul class="background_null">
+							<li id="url-left-li1"><span>></span><a href="#">工业驱动和和自动化</a></li>
+							<li id="url-left-li2"><span>></span><a href="#">高压变频和系统集成</a></li>
+							<li id="url-left-li3"><span>></span><a href="#">混泥土搅拌机</a></li>
+							<li id="url-left-li4"><span>></span><a href="#">电动车辆</a></li>
+						</ul>
+					</div>
+					<div class="left-url-ul1 background_null" id="chanpinzhongxin3_ul">
+						<ul class="background_null">
+							<li id="url-left-li1"><span>></span><a href="#">电池电源</a></li>
+							<li id="url-left-li2"><span>></span><a href="#">输变电设备</a></li>
+							<li id="url-left-li3"><span>></span><a href="#">楼盘信息</a></li>
+							<li id="url-left-li4"><span>></span><a href="#">金融产品</a></li>
+
+						</ul>
+					</div>
+				</div>
+				
+				<div id="div_urls_center">
+					<p class="background_null">技术研发</p>
+					<!-- <div id="left-line" class="line" /> -->
+					<hr />
+					<div class="left-url-ul1 background_null" id="left-url-ul1">
+						<ul class="background_null">
+							<li id="url-left-li1" ><span>></span><a href="#">科技力量</a></li>
+							<li id="url-left-li2"><span>></span><a href="#">先进设备</a></li>
+							<li id="url-left-li3"><span>></span><a href="#">研发创新</a></li>
+							<li id="url-left-li4"><span>></span><a href="#">工艺流程</a></li>
+						</ul>
+					</div>
+				</div>
+				<div id="div_urls_right">
+					<p class="background_null">营销网络</p>
+					<!-- <div id="left-line" class="line" /> -->
+					<hr />
+					<img src="img/china.png">
+				</div>
+			</div>
+			<div id="div_bottom">
+				<img src="img/footer.png">
+			</div>
+		</div>
+	</body>
+</html>
